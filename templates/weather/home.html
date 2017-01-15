@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+
+    <head>
+        <title>Glasgow Weather</title>
+    </head>
+
+    {% block body_block %}
+
+        <h1>Glasgow Weather</h1>
+
+        <div>
+        {% if weather %}
+        <div style="float:left">
+            <h2> Weather in {{ weather.location }} </h2>
+            <h3> {{ weather.description }}, {{ weather.temperature}}°C </h3>
+            <h4> {{ weather.temp_min }}°C - {{ weather.temp_max }}°C </h4>
+            <p> Wind speed: {{ weather.wind_speed }} m/s </p>
+            <p> Wind direction: {{ weather.wind_direction}}° </p>
+            <p> Cloud coverage: {{ weather.clouds }}% </p>
+            <p> Pressure: {{ weather.pressure }} hpa </p>
+            <p> Humidity: {{ weather.humidity }}% </p>
+            <p> Sunrise: {{ weather.sunrise_time }} </p>
+            <p> Sunset: {{ weather.sunset_time }} </p>
+            <h4> At {{ weather.time }} </h4>
+        </div>
+        {% endif %}
+
+        <div style="float: left; margin-left: 150px">
+        <h2> Forecast for Glasgow </h2>
+        {% for weather in forecast %}
+
+          <h3> {{ weather.time }} </h3>
+          <h3> {{ weather.description }}, {{ weather.temperature}}°C </h3>
+          <h4> {{ weather.temp_min }}°C - {{ weather.temp_max }}°C </h4>
+          <p> Wind speed: {{ weather.wind_speed }} m/s </p>
+          <p> Wind direction: {{ weather.wind_direction}}° </p>
+          <p> Cloud coverage: {{ weather.clouds }}% </p>
+          <p> Pressure: {{ weather.pressure }} hpa </p>
+          <p> Humidity: {{ weather.humidity }}% </p>
+
+        {% endfor %}
+        </div>
+      {% endblock %}
+
+    </div>
+
+</html>
