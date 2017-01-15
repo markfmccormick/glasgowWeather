@@ -22,7 +22,7 @@ def get_weather():
     results['weather']['temperature'] = float("{0:.1f}".format(weather.get_temperature()['temp']-273.15))
     results['weather']['temp_max'] = float("{0:.1f}".format(weather.get_temperature()['temp_max']-273.15))
     results['weather']['temp_min'] = float("{0:.1f}".format(weather.get_temperature()['temp_min']-273.15))
-    results['weather']['wind_direction'] = weather.get_wind()['deg']
+    #results['weather']['wind_direction'] = weather.get_wind()['deg']
     results['weather']['wind_speed'] = weather.get_wind()['speed']
     results['weather']['clouds'] = weather.get_clouds()
     results['weather']['humidity'] = weather.get_humidity()
@@ -44,7 +44,7 @@ def get_weather():
         results['forecast'][count]['temperature'] = float("{0:.1f}".format(w.get_temperature()['temp']-273.15))
         results['forecast'][count]['temp_max'] = float("{0:.1f}".format(w.get_temperature()['temp_max']-273.15))
         results['forecast'][count]['temp_min'] = float("{0:.1f}".format(w.get_temperature()['temp_min']-273.15))
-        results['forecast'][count]['wind_direction'] = w.get_wind()['deg']
+        #results['forecast'][count]['wind_direction'] = w.get_wind()['deg']
         results['forecast'][count]['wind_speed'] = w.get_wind()['speed']
         results['forecast'][count]['clouds'] = w.get_clouds()
         results['forecast'][count]['humidity'] = w.get_humidity()
